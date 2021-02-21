@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 
 public class CheckBoxRadioButtonTextBox {
     /*
@@ -33,7 +34,7 @@ public class CheckBoxRadioButtonTextBox {
 
         desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10.0");
+        desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7.0");
         desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "1fd655780409");
         desiredCapabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\YSMNI\\Desktop\\Apps\\apiDemos.apk");
         desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, "true");
@@ -60,7 +61,8 @@ public class CheckBoxRadioButtonTextBox {
 //        Assert.assertTrue( checkbox.isSelected());
 //       // Assert.assertNotEquals(valueOFCheckBox,valueOFCheckBox2);
 //
-
+        List<WebElement> chkbx = driver.findElementsByClassName("android.widget.CheckBox");
+        System.out.println(chkbx.get(0).getAttribute("checked"));
 
     }
 }
